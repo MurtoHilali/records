@@ -6,7 +6,7 @@ discogs_username = "murtohilali"
 discogs_token = "fJPKYtbTsjKePyhSAfWKlBaJydRIdlyTxCteGLKe" 
 
 # folder 0 is typically your "all" collection
-url = f"https://api.discogs.com/users/{discogs_username}/collection/folders/0/releases?token={discogs_token}&per_page=50"
+url = f"https://api.discogs.com/users/{discogs_username}/collection/folders/0/releases?token={discogs_token}&per_page=100"
 
 try:
     response = requests.get(url)
@@ -32,7 +32,7 @@ for item in releases:
         })
 
 # save the records to a JSON file
-with open("discogs_records.json", "w") as f:
+with open("discogs_records_2.json", "w") as f:
     json.dump(records, f, indent=4)
 print(f"Fetched {len(records)} records from Discogs and saved to discogs_records.json.")
 
